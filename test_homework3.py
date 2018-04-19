@@ -5,8 +5,9 @@ from homework3 import create_dataframe
 # Define a class in which the tests will run
 class PrimeTest(unittest.TestCase):
 
-    def test_smoke(self):
-        create_dataframe("class.db")
+    def test_size(self):
+        dataframe = create_dataframe("class.db")
+        self.assertTrue(dataframe.shape[0]>=10)
 
     def test_missing(self):
         with self.assertRaises(ValueError):
